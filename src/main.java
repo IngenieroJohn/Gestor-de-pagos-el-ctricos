@@ -44,18 +44,22 @@ public class main  {
 		
 		
 		
-		
+		System.out.println("****EMPRESA ELECTRICA****");
+	
 		boolean rep=true;
 		do {
-		System.out.println("<1> Presentar total megavatios por ciudad en una planta");
+		System.out.println("\n<1> Presentar total megavatios por ciudad en una planta");
 		System.out.println("<2> Total de megavatios a una ciudad por planta");
 		System.out.println("<3> Dinero por region");
-		System.out.println("<4> Salir");
+		System.out.println("<4> Salir\n");
+		System.out.println("INGRESA UNA OPCION : ");
+		
 		
 		Scanner scan = new Scanner (System.in);
 		int op;
 		op = scan.nextInt();
-		String name_city, name_plan;
+		String name_city, name_plan,name_region;
+		int resultotal=0;
 		switch(op) {
 		
 		case 1:
@@ -114,14 +118,57 @@ public class main  {
 			
 			
 			break;
-			
 		case 3:
+			int resulcoca1=0 ,resulsop1=0 ,resulsop2=0;
+			System.out.println("Ingrese nombre de la region : ");
+			name_region=scan1.next();
+			int numero=0 ,i;
 			
+			if(name_region.equals("Sierra")) {
+				
+				for(i=0; i<consumo_co_quito.length; i++) {
+					numero=consumo_co_quito[i]+numero;
+					}
+				    int resul=numero*75;
+				    
+				for(i=0; i<consumo_sop_qto.length;i++) {
+					numero=consumo_sop_qto[i]+numero;
+				    }
+				    int resul1=numero*79;
+				for(i=0; i<consumo_sop_loja.length; i++) {
+					numero=consumo_sop_loja[i]+numero;
+				    }
+				    int resul2=numero*32;
+				    
+				    resultotal=resul1+resul2+resul; 
+				    
+				System.out.println("El dinero recaudado en la Sierra es : $"+resultotal);
+			 }
 			
+			else if(name_region.equals("Costa")) {
+				
+				for(i=0; i<consumo_co_gya.length; i++) {
+					numero=consumo_co_gya[i]+numero;
+					}
+				    int resul=numero*64;
+				    
+				for(i=0; i<consumo_sop_gya.length;i++) {
+					numero=consumo_sop_gya[i]+numero;
+				    }
+				    int resul1=numero*85;
+				    resultotal=resul1+resul;
+				
+				System.out.println("El dinero recaudado en la Costa es : $"+resultotal);
+				
+			  }
+			else 
+				System.out.println("Error de tipeo");
 			
-			break;
+			break;	
+		
 		case 4:
 			rep = false;
+			System.out.println(" Gracias por utilizar nuestros servicios :) ");
 			break;
 		
 		
