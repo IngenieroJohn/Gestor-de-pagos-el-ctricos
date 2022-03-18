@@ -29,8 +29,8 @@ public class main  {
 		
 		Hashtable<String, Diccionario> Coca_codo = new Hashtable<String, Diccionario>();
 		
-		Coca_codo.put("quito",tupla1_coca );
-		Coca_codo.put("guayaquil", tupla2_coca);
+		Coca_codo.put("Quito",tupla1_coca );
+		Coca_codo.put("Guayaquil", tupla2_coca);
 		
 		
 		
@@ -100,7 +100,7 @@ public class main  {
 			name_city= scan.next();
 			boolean a=Sopladora.containsKey(name_city), b= Coca_codo.containsKey(name_city);
 				
-			if(a== true && b==true) {
+			if(a==true&& b==true ){
 				resulcoca=(Sopladora.get(name_city)).calculo_megavatios(); 
 				resulsop=(Coca_codo.get(name_city)).calculo_megavatios();
 				System.out.println(name_city+" es abastecida por ambas plantas >> En Coca codo Sinclair con: " +resulcoca +" voltios y Sopladora con: "+ resulsop+" voltios");
@@ -113,7 +113,7 @@ public class main  {
 			else if(a== true && b== false) {
 				resulsop=(Sopladora.get(name_city)).calculo_megavatios(); 
 				
-				System.out.println(name_city+" es abastecida por Coca codo sinclair con: "+ resulsop+" voltios");
+				System.out.println(name_city+" es abastecida por Sopladora con: "+ resulsop+" voltios");
 			}
 			
 			
@@ -121,7 +121,7 @@ public class main  {
 		case 3:
 			int resulcoca1=0 ,resulsop1=0 ,resulsop2=0;
 			System.out.println("Ingrese nombre de la region : ");
-			name_region=scan1.next();
+			name_region=scan.next();
 			int numero=0 ,i;
 			
 			if(name_region.equals("Sierra")) {
